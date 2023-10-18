@@ -1,9 +1,11 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../SharedPages/Navbar/Navbar";
 import Swal from "sweetalert2";
 
 const ProductDetail = () => {
   const product = useLoaderData();
+
+  const navigate = useNavigate();
 
   const { _id, name, brand, type, price, image, description } = product || {};
 
@@ -25,6 +27,7 @@ const ProductDetail = () => {
           .then((data) => {
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              navigate('/');
             }
           });
       }
@@ -68,9 +71,16 @@ const ProductDetail = () => {
           <Link>
             <button
               onClick={() => handleDelete(_id)}
-              className="w-full bg-red-700 hover:bg-red-800 text-white font-bold py-2 rounded"
+              className="w-full bg-red-700 hover:bg-red-800 text-white font-bold py-2 rounded mb-3"
             >
               Delete
+            </button>
+          </Link>
+          <Link to={`/updateproduct/${_id}`}>
+            <button
+              className="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2 rounded"
+            >
+              Update Detail
             </button>
           </Link>
         </div>
