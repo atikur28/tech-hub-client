@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HomeProducts = ({ product }) => {
   const { _id, name, brand, image, description } = product || {};
   return (
-    <div className="flex flex-col w-[250px] md:w-[320px] xl:w-[400px] border p-1.5">
+    <div className="flex flex-col w-[250px] md:w-[320px] xl:w-[400px] border p-1.5 bg-white">
       <img
         className="w-[250px] md:w-[320px] xl:w-[400px] h-[150px] md:h-[180px] xl:h-[250px]"
         src={image}
