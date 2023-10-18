@@ -1,6 +1,14 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut().then().catch();
+  };
+
   const navLinks = (
     <>
       <li>
@@ -33,6 +41,21 @@ const Navbar = () => {
           About Us
         </NavLink>
       </li>
+      {
+        user && 
+        <>
+        <li>
+        <NavLink
+          to="/addedcarts"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-red-600 underline" : ""
+          }
+        >
+          My Carts
+        </NavLink>
+      </li>
+        </>
+      }
     </>
   );
 
@@ -63,9 +86,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="normal-case font-bold md:text-2xl">
-          TechElectroHub
-        </a>
+        <a className="normal-case font-bold md:text-2xl">TechElectroHub</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex justify-center gap-4 text-lg font-semibold px-1">
@@ -89,11 +110,20 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <Link to="/login">
-            <button className="bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded">
-              Login
+          {user ? (
+            <button
+              onClick={handleLogOut}
+              className="bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded"
+            >
+              Logout
             </button>
-          </Link>
+          ) : (
+            <Link to="/login">
+              <button className="bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
