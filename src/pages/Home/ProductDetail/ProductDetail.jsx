@@ -41,12 +41,12 @@ const ProductDetail = () => {
       </div>
       <div className="w-max mx-auto my-10 border rounded">
         <img
-          className="w-[250px] md:w-[500px] md:h-[300px] lg:w-[650px] lg:h-[350px] "
+          className="w-[250px] md:w-[500px] md:h-[300px] lg:w-[650px] lg:h-[350px] mx-auto"
           src={image}
           alt="product-image"
         />
         <div className="md:flex items-center justify-between mt-2 px-2">
-          <h3 className="font-bold text-xl lg:text-2xl">{name}</h3>
+          <h3 className="font-bold text-xl lg:text-2xl w-[250px] md:w-fit">{name}</h3>
           <h3 className="font-semibold md:text-lg lg:text-xl">
             Brand: <span className="text-red-800 font-bold">{brand}</span>
           </h3>
