@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import Navbar from "../SharedPages/Navbar/Navbar";
+import Footer from "../SharedPages/Footer/Footer";
 
 const AddProduct = () => {
 
@@ -120,6 +121,7 @@ const AddProduct = () => {
           </div>
         </form>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

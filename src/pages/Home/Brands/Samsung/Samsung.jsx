@@ -1,13 +1,15 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../../../SharedPages/Navbar/Navbar";
 import SamsungProduct from "./SamsungProduct/SamsungProduct";
+import Footer from "../../../SharedPages/Footer/Footer";
 
 const Samsung = () => {
+  const products = useLoaderData();
 
-    const products = useLoaderData();
-
-    const samsungProducts = products.filter((product) => product.brand === "Samsung");
-    console.log(samsungProducts);
+  const samsungProducts = products.filter(
+    (product) => product.brand === "Samsung"
+  );
+  console.log(samsungProducts);
 
   return (
     <div>
@@ -18,63 +20,18 @@ const Samsung = () => {
         <h1 className="text-2xl md:text-4xl font-semibold text-center mb-5">
           Samsung Products
         </h1>
-        <div className="w-max mx-auto grid grid-cols-1 lg:grid-cols-3 lg:gap-5">
-          <div className="col-span-2">
-            <div className="w-max mx-auto grid grid-cols-1">
-              {
-                samsungProducts.map(samsung => <SamsungProduct key={samsung._id} samsung={samsung}></SamsungProduct>)
-              }
-            </div>
-          </div>
-          <div className="border h-max">
-            <h3 className="text-xl font-semibold text-center">Advertisement</h3>
-            <div className="carousel w-[310px] mt-5">
-              <div id="slide1" className="carousel-item relative w-full">
-                <img
-                  src="https://i.ibb.co/S78WT9C/digital-marketing-1725340-640.jpg"
-                  className="w-[300px] mx-auto"
-                />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                  <a href="#slide4" className="btn btn-circle">
-                    ❮
-                  </a>
-                  <a href="#slide2" className="btn btn-circle">
-                    ❯
-                  </a>
-                </div>
-              </div>
-              <div id="slide2" className="carousel-item relative w-full">
-                <img
-                  src="https://i.ibb.co/ZYLDrst/macbook-624707-640.jpg"
-                  className="w-full"
-                />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                  <a href="#slide1" className="btn btn-circle">
-                    ❮
-                  </a>
-                  <a href="#slide3" className="btn btn-circle">
-                    ❯
-                  </a>
-                </div>
-              </div>
-              <div id="slide4" className="carousel-item relative w-full">
-                <img
-                  src="https://i.ibb.co/c1320xd/education-1651259-640.jpg"
-                  className="w-full"
-                />
-                <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                  <a href="#slide3" className="btn btn-circle">
-                    ❮
-                  </a>
-                  <a href="#slide1" className="btn btn-circle">
-                    ❯
-                  </a>
-                </div>
-              </div>
-            </div>
+        <div className="w-max mx-auto">
+          <div className="w-max mx-auto grid grid-cols-1">
+            {samsungProducts.map((samsung) => (
+              <SamsungProduct
+                key={samsung._id}
+                samsung={samsung}
+              ></SamsungProduct>
+            ))}
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

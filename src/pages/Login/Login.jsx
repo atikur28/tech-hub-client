@@ -3,6 +3,7 @@ import Navbar from "../SharedPages/Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import Footer from "../SharedPages/Footer/Footer";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
@@ -107,6 +108,7 @@ const Login = () => {
           </Link>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

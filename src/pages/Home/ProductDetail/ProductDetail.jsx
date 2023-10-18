@@ -1,6 +1,7 @@
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../SharedPages/Navbar/Navbar";
 import Swal from "sweetalert2";
+import Footer from "../../SharedPages/Footer/Footer";
 
 const ProductDetail = () => {
   const product = useLoaderData();
@@ -85,6 +86,7 @@ const ProductDetail = () => {
           </Link>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

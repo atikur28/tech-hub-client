@@ -3,6 +3,7 @@ import HomeBanner from "./HomeBanner/HomeBanner";
 import Features from "./Features/Features";
 import HomeAbout from "./HomeAbout/HomeAbout";
 import Brands from "./Brands/Brands";
+import Footer from "../SharedPages/Footer/Footer";
 
 const Home = () => {
 
@@ -25,6 +26,7 @@ const Home = () => {
         <Features></Features>
       </div>
       <HomeAbout></HomeAbout>
+      <Footer></Footer>
     </div>
   );
 };
