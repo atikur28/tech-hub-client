@@ -12,7 +12,7 @@ const HomeBanner = () => {
     >
       <div>
         <h1 className="text-xl md:text-4xl lg:text-6xl text-center font-bold text-white">
-          Welcome to TechElectroHub
+          Welcome to TechHub
         </h1>
         <p className="text-white font-medium md:text-lg px-2 mt-4 text-center w-4/6 mx-auto">Your Gateway to All Things Tech and Electronics. Explore, Discover, and Experience Innovation! Embark on a Journey of Discovery and Experience the Latest in Technological Marvels!</p>
       </div>

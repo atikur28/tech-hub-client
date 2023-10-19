@@ -81,7 +81,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <a className="normal-case font-medium md:font-bold text-sm md:text-2xl">TechElectroHub</a>
+        <p className="normal-case font-medium md:font-bold text-sm md:text-2xl flex items-center gap-1"><img className="w-10 rounded-full" src="https://i.ibb.co/znDbBJ4/a195406f1cbf3510e8901abf512267d4a80d2230-359x359.png" /> TechHub</p>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex justify-center gap-4 text-lg font-semibold px-1">

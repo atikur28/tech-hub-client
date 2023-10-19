@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const AppleProduct = ({ oneProduct }) => {
   const { _id, name, brand, price, type, image } = oneProduct || {};
+
   return (
     <div className="w-max mx-auto mb-10 border rounded bg-white p-2">
       <img
@@ -36,7 +37,6 @@ const AppleProduct = ({ oneProduct }) => {
           type="radio"
           name="rating-7"
           className="mask mask-star-2 bg-orange-400"
-          checked
         />
         <input
           type="radio"
