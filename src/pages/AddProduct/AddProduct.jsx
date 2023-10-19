@@ -15,7 +15,7 @@ const AddProduct = () => {
         const image = form.image.value;
         const description = form.description.value;
         const newProduct = {name, brand, type, rating, price, image, description};
-        fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products', {
+        fetch('https://tech-electro-hub-server.vercel.app/products', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

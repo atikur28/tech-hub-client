@@ -26,7 +26,7 @@ const createdRouter = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products')
+                loader: () => fetch('https://tech-electro-hub-server.vercel.app/products')
             },
             {
                 path: "/login",
@@ -43,53 +43,53 @@ const createdRouter = createBrowserRouter([
             {
                 path: "/mycarts",
                 element: <PrivateRoute><MyCarts></MyCarts></PrivateRoute>,
-                loader: () => fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/carts')
+                loader: () => fetch('https://tech-electro-hub-server.vercel.app/carts')
             },
             {
                 path: "/updateproduct/:id",
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ({params}) => fetch(`https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-electro-hub-server.vercel.app/products/${params.id}`)
             },
             {
                 path: "/products/:id",
                 element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
-                loader: ({params}) => fetch(`https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-electro-hub-server.vercel.app/products/${params.id}`)
             },
             {
                 path: "/carts/:id",
                 element: <PrivateRoute><CartDetail></CartDetail></PrivateRoute>,
-                loader: ({params}) => fetch(`https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/carts/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-electro-hub-server.vercel.app/carts/${params.id}`)
 
             },
             {
                 path: "/apple",
                 element: <Apple></Apple>,
-                loader: () => fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products')
+                loader: () => fetch('https://tech-electro-hub-server.vercel.app/products')
             },
             {
                 path: "/samsung",
                 element: <Samsung></Samsung>,
-                loader: () => fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products')
+                loader: () => fetch('https://tech-electro-hub-server.vercel.app/products')
             },
             {
                 path: "/sony",
                 element: <Sony></Sony>,
-                loader: () => fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products')
+                loader: () => fetch('https://tech-electro-hub-server.vercel.app/products')
             },
             {
                 path: "/google",
                 element: <Google></Google>,
-                loader: () => fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products')
+                loader: () => fetch('https://tech-electro-hub-server.vercel.app/products')
             },
             {
                 path: "/xiaomi",
                 element: <Xiaomi></Xiaomi>,
-                loader: () => fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products')
+                loader: () => fetch('https://tech-electro-hub-server.vercel.app/products')
             },
             {
                 path: "/dell",
                 element: <Dell></Dell>,
-                loader: () => fetch('https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products')
+                loader: () => fetch('https://tech-electro-hub-server.vercel.app/products')
             },
         ]
     }

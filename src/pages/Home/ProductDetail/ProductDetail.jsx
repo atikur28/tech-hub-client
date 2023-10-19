@@ -28,7 +28,7 @@ const ProductDetail = () => {
       description,
     };
     fetch(
-      "https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/carts",
+      "https://tech-electro-hub-server.vercel.app/carts",
       {
         method: "POST",
         headers: {
@@ -61,7 +61,7 @@ const ProductDetail = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/products/${_id}`,
+          `https://tech-electro-hub-server.vercel.app/products/${_id}`,
           {
             method: "DELETE",
           }
