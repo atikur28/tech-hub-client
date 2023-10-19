@@ -2,8 +2,12 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Navbar from "../../SharedPages/Navbar/Navbar";
 import Swal from "sweetalert2";
 import Footer from "../../SharedPages/Footer/Footer";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const ProductDetail = () => {
+
+  const {user} = useContext(AuthContext);
   const product = useLoaderData();
 
   const navigate = useNavigate();
