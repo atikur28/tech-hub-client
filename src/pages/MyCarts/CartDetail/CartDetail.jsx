@@ -21,7 +21,7 @@ const CartDetail = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/carts/${_id}`, {
+        fetch(`https://tech-electro-hub-server-amsvdjd9q-atikur-rahman-sakibs-projects.vercel.app/carts/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
