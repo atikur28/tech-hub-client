@@ -2,8 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const AppleProduct = ({ oneProduct }) => {
-  const { _id, name, brand, price, type, image } =
-    oneProduct || {};
+  const { _id, name, brand, price, type, image } = oneProduct || {};
   return (
     <div className="w-max mx-auto mb-10 border rounded bg-white p-2">
       <img
@@ -12,7 +11,9 @@ const AppleProduct = ({ oneProduct }) => {
         alt=""
       />
       <div className="md:flex items-center justify-between mt-2 px-2">
-        <h3 className="font-bold text-xl lg:text-2xl w-[250px] md:w-fit">{name}</h3>
+        <h3 className="font-bold text-xl lg:text-2xl w-[250px] md:w-fit">
+          {name}
+        </h3>
         <h3 className="font-semibold md:text-lg lg:text-xl">
           Brand: <span className="text-red-800 font-bold">{brand}</span>
         </h3>
@@ -24,6 +25,34 @@ const AppleProduct = ({ oneProduct }) => {
         <p className="font-semibold md:text-lg lg:text-xl mt-3">
           Price: <span className="text-red-600">${price}</span>
         </p>
+      </div>
+      <div className="rating rating-md px-2">
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+          checked
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
       </div>
       <div className="mx-2 my-4">
         <Link to={`/products/${_id}`}>

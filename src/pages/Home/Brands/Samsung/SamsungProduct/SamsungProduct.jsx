@@ -25,6 +25,34 @@ const SamsungProduct = ({ samsung }) => {
           Price: <span className="text-red-600">${price}</span>
         </p>
       </div>
+      <div className="rating rating-md px-2">
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+          checked
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+      </div>
       <div className="mx-2 my-4">
         <Link to={`/products/${_id}`}>
           <button className="bg-slate-700 text-white w-full rounded py-1.5 font-bold md:text-lg mb-3">

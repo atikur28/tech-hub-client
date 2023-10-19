@@ -41,12 +41,9 @@ const Navbar = () => {
           About Us
         </NavLink>
       </li>
-      {
-        user && 
-        <>
-        <li>
+      <li>
         <NavLink
-          to="/addedcarts"
+          to="/mycarts"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-red-600 underline" : ""
           }
@@ -54,8 +51,6 @@ const Navbar = () => {
           My Carts
         </NavLink>
       </li>
-        </>
-      }
     </>
   );
 

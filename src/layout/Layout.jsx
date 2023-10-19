@@ -14,6 +14,8 @@ import Sony from "../pages/Home/Brands/Sony/Sony";
 import Google from "../pages/Home/Brands/Google/Google";
 import Xiaomi from "../pages/Home/Brands/Xiaomi/Xiaomi";
 import Dell from "../pages/Home/Brands/Dell/Dell";
+import MyCarts from "../pages/MyCarts/MyCarts";
+import CartDetail from "../pages/MyCarts/CartDetail/CartDetail";
 
 const createdRouter = createBrowserRouter([
     {
@@ -39,6 +41,11 @@ const createdRouter = createBrowserRouter([
                 element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
             },
             {
+                path: "/mycarts",
+                element: <PrivateRoute><MyCarts></MyCarts></PrivateRoute>,
+                loader: () => fetch('http://localhost:5000/carts')
+            },
+            {
                 path: "/updateproduct/:id",
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
@@ -47,6 +54,12 @@ const createdRouter = createBrowserRouter([
                 path: "/products/:id",
                 element: <PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>,
                 loader: ({params}) => fetch(`http://localhost:5000/products/${params.id}`)
+            },
+            {
+                path: "/carts/:id",
+                element: <PrivateRoute><CartDetail></CartDetail></PrivateRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/carts/${params.id}`)
+
             },
             {
                 path: "/apple",

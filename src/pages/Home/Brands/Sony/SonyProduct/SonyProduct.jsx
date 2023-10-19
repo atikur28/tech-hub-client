@@ -12,7 +12,9 @@ const SonyProduct = ({ sony }) => {
         alt=""
       />
       <div className="md:flex items-center justify-between mt-2 px-2">
-        <h3 className="font-bold text-lg lg:text-2xl w-[250px] md:w-fit">{name}</h3>
+        <h3 className="font-bold text-lg lg:text-2xl w-[250px] md:w-fit">
+          {name}
+        </h3>
         <h3 className="font-semibold md:text-lg lg:text-xl">
           Brand: <span className="text-red-800 font-bold">{brand}</span>
         </h3>
@@ -24,6 +26,34 @@ const SonyProduct = ({ sony }) => {
         <p className="font-semibold md:text-lg lg:text-xl mt-3">
           Price: <span className="text-red-600">${price}</span>
         </p>
+      </div>
+      <div className="rating rating-md px-2">
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+          checked
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
+        <input
+          type="radio"
+          name="rating-7"
+          className="mask mask-star-2 bg-orange-400"
+        />
       </div>
       <div className="mx-2 my-4">
         <Link to={`/products/${_id}`}>

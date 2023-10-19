@@ -6,13 +6,44 @@ import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const ProductDetail = () => {
-
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const product = useLoaderData();
 
   const navigate = useNavigate();
 
-  const { _id, name, brand, type, price, image, description } = product || {};
+  const { _id, name, brand, type, rating, price, image, description } =
+    product || {};
+
+  const handleAddToCart = () => {
+    const person = user.email;
+    const cart = {
+      person,
+      name,
+      brand,
+      type,
+      rating,
+      price,
+      image,
+      description,
+    };
+    fetch("http://localhost:5000/carts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(cart),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire(
+            "Good job!",
+            "Product added to Carts successfully!",
+            "success"
+          );
+        }
+      });
+  };
 
   const handleDelete = (_id) => {
     Swal.fire({
@@ -32,7 +63,7 @@ const ProductDetail = () => {
           .then((data) => {
             if (data.deletedCount > 0) {
               Swal.fire("Deleted!", "Your file has been deleted.", "success");
-              navigate('/');
+              navigate("/");
             }
           });
       }
@@ -51,7 +82,9 @@ const ProductDetail = () => {
           alt="product-image"
         />
         <div className="md:flex items-center justify-between mt-2 px-2">
-          <h3 className="font-bold text-xl lg:text-2xl w-[250px] md:w-fit">{name}</h3>
+          <h3 className="font-bold text-xl lg:text-2xl w-[250px] md:w-fit">
+            {name}
+          </h3>
           <h3 className="font-semibold md:text-lg lg:text-xl">
             Brand: <span className="text-red-800 font-bold">{brand}</span>
           </h3>
@@ -67,9 +100,40 @@ const ProductDetail = () => {
         <p className="w-[250px] md:w-[500px] lg:w-[650px] font-semibold text-gray-600 md:text-lg px-2 mt-2">
           {description}
         </p>
+        <div className="rating rating-md px-2">
+          <input
+            type="radio"
+            name="rating-7"
+            className="mask mask-star-2 bg-orange-400"
+          />
+          <input
+            type="radio"
+            name="rating-7"
+            className="mask mask-star-2 bg-orange-400"
+            
+          />
+          <input
+            type="radio"
+            name="rating-7"
+            className="mask mask-star-2 bg-orange-400"
+          />
+          <input
+            type="radio"
+            name="rating-7"
+            className="mask mask-star-2 bg-orange-400"
+          />
+          <input
+            type="radio"
+            name="rating-7"
+            className="mask mask-star-2 bg-orange-400"
+          />
+        </div>
         <div className="mx-2 my-4">
           <Link>
-            <button className="w-full bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 rounded mb-3">
+            <button
+              onClick={handleAddToCart}
+              className="w-full bg-slate-600 hover:bg-slate-800 text-white font-bold py-2 rounded mb-3"
+            >
               Add to Cart
             </button>
           </Link>
@@ -82,9 +146,7 @@ const ProductDetail = () => {
             </button>
           </Link>
           <Link to={`/updateproduct/${_id}`}>
-            <button
-              className="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2 rounded"
-            >
+            <button className="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2 rounded">
               Update Detail
             </button>
           </Link>
