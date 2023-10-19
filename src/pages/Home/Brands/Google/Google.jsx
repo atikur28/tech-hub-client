@@ -22,11 +22,19 @@ const Google = () => {
           Google Products
         </h1>
         <div className="w-max mx-auto">
-          <div className="w-max mx-auto grid grid-cols-1">
-            {googleProducts.map((google) => (
-              <GoogleProduct key={google._id} google={google}></GoogleProduct>
-            ))}
-          </div>
+          {googleProducts.length > 0 ? (
+            <div className="w-max mx-auto grid grid-cols-1">
+              {googleProducts.map((google) => (
+                <GoogleProduct key={google._id} google={google}></GoogleProduct>
+              ))}
+            </div>
+          ) : (
+            <div className="h-[20vh] flex justify-center items-center">
+              <div>
+                <h2 className="text-xl font-bold">No data</h2>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <Footer></Footer>

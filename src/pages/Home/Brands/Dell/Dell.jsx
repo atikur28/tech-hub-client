@@ -20,11 +20,19 @@ const Dell = () => {
           Dell Products
         </h1>
         <div className="w-max mx-auto">
-          <div className="w-max mx-auto grid grid-cols-1">
-            {dellProducts.map((dell) => (
-              <DellProduct key={dell._id} dell={dell}></DellProduct>
-            ))}
-          </div>
+          {dellProducts.length > 0 ? (
+            <div className="w-max mx-auto grid grid-cols-1">
+              {dellProducts.map((dell) => (
+                <DellProduct key={dell._id} dell={dell}></DellProduct>
+              ))}
+            </div>
+          ) : (
+            <div className="h-[20vh] flex justify-center items-center">
+              <div>
+                <h2 className="text-xl font-bold">No data</h2>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <Footer></Footer>

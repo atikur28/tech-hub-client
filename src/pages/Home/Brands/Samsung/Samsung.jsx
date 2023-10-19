@@ -23,14 +23,22 @@ const Samsung = () => {
           Samsung Products
         </h1>
         <div className="w-max mx-auto">
-          <div className="w-max mx-auto grid grid-cols-1">
-            {samsungProducts.map((samsung) => (
-              <SamsungProduct
-                key={samsung._id}
-                samsung={samsung}
-              ></SamsungProduct>
-            ))}
-          </div>
+          {samsungProducts.length > 0 ? (
+            <div className="w-max mx-auto grid grid-cols-1">
+              {samsungProducts.map((samsung) => (
+                <SamsungProduct
+                  key={samsung._id}
+                  samsung={samsung}
+                ></SamsungProduct>
+              ))}
+            </div>
+          ) : (
+            <div className="h-[20vh] flex justify-center items-center">
+              <div>
+                <h2 className="text-xl font-bold">No data</h2>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <Footer></Footer>

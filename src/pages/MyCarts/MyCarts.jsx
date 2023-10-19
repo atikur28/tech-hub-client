@@ -17,11 +17,17 @@ const MyCarts = () => {
         <Navbar></Navbar>
       </div>
       <div className="py-20">
-        {userCarts && (
+        {userCarts.length > 0 ? (
           <div className="w-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-5">
             {userCarts.map((cart) => (
               <Cart key={cart._id} cart={cart}></Cart>
             ))}
+          </div>
+        ) : (
+          <div className="h-[20vh] flex justify-center items-center">
+            <div>
+              <h2 className="text-xl font-bold">No data</h2>
+            </div>
           </div>
         )}
       </div>

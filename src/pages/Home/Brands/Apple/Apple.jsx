@@ -20,14 +20,22 @@ const Apple = () => {
           Apple Products
         </h1>
         <div className="w-max mx-auto">
-          <div className="w-max mx-auto grid grid-cols-1">
-            {appleProducts.map((oneProduct) => (
-              <AppleProduct
-                key={oneProduct._id}
-                oneProduct={oneProduct}
-              ></AppleProduct>
-            ))}
-          </div>
+          {appleProducts.length > 0 ? (
+            <div className="w-max mx-auto grid grid-cols-1">
+              {appleProducts.map((oneProduct) => (
+                <AppleProduct
+                  key={oneProduct._id}
+                  oneProduct={oneProduct}
+                ></AppleProduct>
+              ))}
+            </div>
+          ) : (
+            <div className="h-[20vh] flex justify-center items-center">
+              <div>
+                <h2 className="text-xl font-bold">No data</h2>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <Footer></Footer>

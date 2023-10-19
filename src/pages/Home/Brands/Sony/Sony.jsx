@@ -20,11 +20,19 @@ const Sony = () => {
           Sony Products
         </h1>
         <div className="w-max mx-auto">
-          <div className="w-max mx-auto grid grid-cols-1">
-            {sonyProducts.map((sony) => (
-              <SonyProduct key={sony._id} sony={sony}></SonyProduct>
-            ))}
-          </div>
+          {sonyProducts.length > 0 ? (
+            <div className="w-max mx-auto grid grid-cols-1">
+              {sonyProducts.map((sony) => (
+                <SonyProduct key={sony._id} sony={sony}></SonyProduct>
+              ))}
+            </div>
+          ) : (
+            <div className="h-[20vh] flex justify-center items-center">
+              <div>
+                <h2 className="text-xl font-bold">No data</h2>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <Footer></Footer>
