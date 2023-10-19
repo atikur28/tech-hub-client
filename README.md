@@ -1,6 +1,6 @@
 # TechHub - Your Premier Brand Shop for Tech Enthusiasts
 
-Visit the live site: [TechHub](link)
+Visit the live site: [TechHub](https://tech-electro-hub.web.app/)
 
 TechHub is the ultimate destination for technology enthusiasts. Explore the world of technology and electronics with our wide range of products and features. Below, we'll highlight the key functionalities of our website:
 
