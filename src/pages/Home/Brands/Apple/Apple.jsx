@@ -7,7 +7,7 @@ import SlideBanner from "../../../SharedPages/SlideBanner/SlideBanner";
 const Apple = () => {
   const products = useLoaderData();
 
-  const appleProducts = products.filter((product) => product.brand === "Apple");
+  const appleProducts = products.filter((product) => product.brand.toLowerCase() === "apple");
 
   return (
     <div>
@@ -32,7 +32,7 @@ const Apple = () => {
           ) : (
             <div className="h-[20vh] flex justify-center items-center">
               <div>
-                <h2 className="text-xl font-bold">No data</h2>
+                <h2 className="text-xl font-bold">Products not available</h2>
               </div>
             </div>
           )}

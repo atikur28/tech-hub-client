@@ -8,7 +8,7 @@ const Xiaomi = () => {
   const products = useLoaderData();
 
   const xiaomiProducts = products.filter(
-    (product) => product.brand === "Xiaomi"
+    (product) => product.brand.toLowerCase() === "xiaomi"
   );
 
   return (
@@ -31,7 +31,7 @@ const Xiaomi = () => {
           ) : (
             <div className="h-[20vh] flex justify-center items-center">
               <div>
-                <h2 className="text-xl font-bold">No data</h2>
+                <h2 className="text-xl font-bold">Products not available</h2>
               </div>
             </div>
           )}

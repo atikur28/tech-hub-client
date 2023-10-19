@@ -8,7 +8,7 @@ const Samsung = () => {
   const products = useLoaderData();
 
   const samsungProducts = products.filter(
-    (product) => product.brand === "Samsung"
+    (product) => product.brand.toLowerCase() === "samsung"
   );
   console.log(samsungProducts);
 
@@ -35,7 +35,7 @@ const Samsung = () => {
           ) : (
             <div className="h-[20vh] flex justify-center items-center">
               <div>
-                <h2 className="text-xl font-bold">No data</h2>
+                <h2 className="text-xl font-bold">Products not available</h2>
               </div>
             </div>
           )}
